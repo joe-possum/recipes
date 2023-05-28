@@ -24,7 +24,7 @@ weights = {
   'InstantPot':27.7,
   'baking-dish-anchor-1Qt5':36.88,
   'baking-dish-2Qt':34.16,
-  'baking-dish-3Qt':73.70}
+  'baking-dish-3Qt':73.70
 }
 
 def exit_list(dictionary=False) :
