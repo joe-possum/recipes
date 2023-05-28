@@ -49,7 +49,7 @@ if '.py' != sys.argv[0][-3:] :
     if len(fn) > len(name_prefix)+1 :
         vessel = fn[1+len(name_prefix):]
         weight = weights.get(vessel)
-long_opts = ['metric','list','name-prefix'] + vessels
+long_opts = ['metric','list','name-prefix','template'] + vessels
 
 def exit_help(message=None) :
     if None != message :
@@ -76,7 +76,9 @@ for opt,param in opts :
         print(name_prefix)
         quit()
     elif '--list' == opt :
-        exit_list('net-weight.py' == sys.argv[0][:13])
+        exit_list()
+    elif '--template' == opt :
+        exit_list(True)
     elif '--' == opt[:2] :
         for vessel in vessels :
             if vessel == opt[2:] :
