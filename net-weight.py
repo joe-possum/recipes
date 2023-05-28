@@ -21,7 +21,7 @@ weights = {
   'Lodge-6in':31.69,
   'Lodge-8in':48.65,
   'Lodge-10in':98.69,
-  'InstantPot':27.7
+  'InstantPot':27.7,
   'baking-dish-anchor-1Qt5':36.88,
   'baking-dish-2Qt':34.16,
   'baking-dish-3Qt':73.70}
