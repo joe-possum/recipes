@@ -9,7 +9,7 @@ def add_prefix(p,l) :
         rc.append(p+i)
     return rc
 
-vessels = add_prefix('saucepan-',['1Qt','1Qt5','2Qt5']) + add_prefix('pot-',['3Qt','6Qt','10Qt']) + add_prefix('Lodge-',['6in','8in','10in']) + ['InstantPot']
+vessels = add_prefix('saucepan-',['1Qt','1Qt5','2Qt5']) + add_prefix('pot-',['3Qt','6Qt','10Qt']) + add_prefix('Lodge-',['6in','8in','10in']) + ['InstantPot'] + add_prefix('baking-dish-',['anchor-1Qt5','2Qt','3Qt'])
 
 weights = {
   'saucepan-1Qt':13.75,
@@ -22,6 +22,9 @@ weights = {
   'Lodge-8in':48.65,
   'Lodge-10in':98.69,
   'InstantPot':27.7
+  'baking-dish-anchor-1Qt5':36.88,
+  'baking-dish-2Qt':34.16,
+  'baking-dish-3Qt':73.70}
 }
 
 def exit_list(dictionary=False) :
@@ -61,6 +64,7 @@ def exit_help(message=None) :
             str += '  '
         str += this
     print(str + ' <gross-weight>')
+    quit()
         
 opts,params = getopt.getopt(sys.argv[1:],'hm',long_opts)
 for opt,param in opts :
@@ -72,7 +76,7 @@ for opt,param in opts :
         print(name_prefix)
         quit()
     elif '--list' == opt :
-        exit_list()
+        exit_list('net-weight.py' == sys.argv[0][:13])
     elif '--' == opt[:2] :
         for vessel in vessels :
             if vessel == opt[2:] :
