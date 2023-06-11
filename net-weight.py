@@ -1,5 +1,6 @@
 import sys
 import getopt
+import numpy
 
 name_prefix = 'net-weight'
 
@@ -49,7 +50,7 @@ if '.py' != sys.argv[0][-3:] :
     if len(fn) > len(name_prefix)+1 :
         vessel = fn[1+len(name_prefix):]
         weight = weights.get(vessel)
-long_opts = ['metric','list','name-prefix','template'] + vessels
+long_opts = ['metric','list','name-prefix','template','split='] + vessels
 
 def exit_help(message=None) :
     if None != message :
@@ -65,7 +66,8 @@ def exit_help(message=None) :
         str += this
     print(str + ' <gross-weight>')
     quit()
-        
+
+split = 1
 opts,params = getopt.getopt(sys.argv[1:],'hm',long_opts)
 for opt,param in opts :
     if '-h' == opt :
@@ -79,6 +81,8 @@ for opt,param in opts :
         exit_list()
     elif '--template' == opt :
         exit_list(True)
+    elif '--split' == opt :
+        split = int(param)
     elif '--' == opt[:2] :
         for vessel in vessels :
             if vessel == opt[2:] :
@@ -97,3 +101,6 @@ if len(params) > 1 :
 gross_weight = float(params[0])
 net_weight = gross_weight - weight
 print('%.1f oz net weight (%.1f cups)'%(net_weight,net_weight/8))
+if split > 1 :
+    print('Split %d ways: %.1f oz'%(split,numpy.floor(10*net_weight/split)/10))
+
