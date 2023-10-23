@@ -10,7 +10,7 @@ def repeat(char,count) :
 HOUR=3600
 DAY=24*HOUR
 days = ["Sun","Mon","Tues","Wednes","Thurs","Fri","Satur"]
-months = ["January","February","March","April","May","June","July","August","September","November","December"]
+months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 
 now = time.localtime()
 print(now)
