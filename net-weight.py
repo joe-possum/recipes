@@ -10,7 +10,7 @@ def add_prefix(p,l) :
         rc.append(p+i)
     return rc
 
-vessels = add_prefix('saucepan-',['1Qt','1Qt5','2Qt5']) + add_prefix('pot-',['3Qt','6Qt','10Qt']) + add_prefix('Lodge-',['6in','8in','10in']) + ['InstantPot'] + add_prefix('baking-dish-',['anchor-1Qt5','2Qt','3Qt'])
+vessels = add_prefix('saucepan-',['1Qt','1Qt5','2Qt5']) + add_prefix('pot-',['3Qt','6Qt','10Qt','Cuisinart']) + add_prefix('Lodge-',['6in','8in','10in']) + ['InstantPot'] + add_prefix('baking-dish-',['anchor-1Qt5','2Qt','3Qt']) + add_prefix('bowl-',['glass'])
 
 weights = {
   'saucepan-1Qt':13.75,
@@ -19,13 +19,15 @@ weights = {
   'pot-3Qt':22.46,
   'pot-6Qt':46.89,
   'pot-10Qt':56.5,
+  'pot-Cuisinart':42.775,
   'Lodge-6in':31.69,
   'Lodge-8in':48.65,
   'Lodge-10in':98.69,
   'InstantPot':27.7,
   'baking-dish-anchor-1Qt5':36.88,
   'baking-dish-2Qt':34.16,
-  'baking-dish-3Qt':73.70
+  'baking-dish-3Qt':73.70,
+  'bowl-glass':26.74
 }
 
 def exit_list(dictionary=False) :
